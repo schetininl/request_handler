@@ -1,1 +1,1 @@
-web: gunicorn app:request_handler
+web: gunicorn request_handler:app
