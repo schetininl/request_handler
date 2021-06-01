@@ -22,6 +22,6 @@ def hello_world():
 if __name__ == '__main__':
     app.config['BOT_TOKEN'] = os.getenv("BOT_TOKEN")
     app.config['CHAT_ID'] = os.getenv("CHAT_ID")
-    port = int(os.getenv('PORT', '8000'))
+    port = int(os.getenv('PORT', '5000'))
 
-    app.run(debug=True, port=port)
+    app.run(threaded=True, port=port)
