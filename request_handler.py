@@ -15,7 +15,7 @@ def hello_world():
         data=dict(request.data)
     )
     bot = telebot.TeleBot(os.getenv("BOT_TOKEN"))
-    bot.send_message(os.getenv("CHAT_ID"), json.dumps(request_info, indent=4))
+    bot.send_message(os.getenv("CHAT_ID"), '___________________________________\n'+json.dumps(request_info, indent=4))
     return 'OK'
 
 
