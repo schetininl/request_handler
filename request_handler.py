@@ -14,14 +14,14 @@ def hello_world():
         args=dict(request.args),
         data=dict(request.data)
     )
-    bot = telebot.TeleBot(app.config['BOT_TOKEN'])
-    bot.send_message(app.config['CHAT_ID'], json.dumps(request_info, indent=4))
+    bot = telebot.TeleBot(os.getenv("BOT_TOKEN"))
+    bot.send_message(os.getenv("CHAT_ID"), json.dumps(request_info, indent=4))
     return 'OK'
 
 
 if __name__ == '__main__':
-    app.config['BOT_TOKEN'] = os.getenv("BOT_TOKEN")
-    app.config['CHAT_ID'] = os.getenv("CHAT_ID")
+    print(os.getenv("BOT_TOKEN"))
+    print(os.getenv("CHAT_ID"))
     port = int(os.getenv('PORT', '5000'))
 
     app.run(threaded=True, port=port)
