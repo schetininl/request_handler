@@ -20,8 +20,5 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    print(os.getenv("BOT_TOKEN"))
-    print(os.getenv("CHAT_ID"))
     port = int(os.getenv('PORT', '5000'))
-
     app.run(threaded=True, port=port)
